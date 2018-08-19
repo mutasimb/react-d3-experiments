@@ -91,5 +91,11 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-sass": "^4.0.1"
   }
 }

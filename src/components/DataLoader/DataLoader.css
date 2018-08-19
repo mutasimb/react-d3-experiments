@@ -1,0 +1,9 @@
+.DataLoader {
+  padding: 7.5px 0;
+  background-color: red;
+}
+
+.DataLoader p {
+  text-transform: uppercase;
+  color: white;
+}
