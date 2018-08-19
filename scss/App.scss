@@ -6,7 +6,7 @@
     padding: 20px;
     color: white;
     .AppLogo {
-      animation: App-logo-spin infinite 20s linear;
+      animation: AppLogoSpin infinite 20s linear;
       height: 80px;
     }
     .AppTitle {
@@ -18,7 +18,7 @@
   }
 }
 
-@keyframes App-logo-spin {
+@keyframes AppLogoSpin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
