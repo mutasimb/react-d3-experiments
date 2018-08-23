@@ -3,9 +3,8 @@ import ReactDropzone from 'react-dropzone'
 import { csv } from 'd3-request'
 import { format } from 'd3-format'
 import classnames from 'classnames'
-import css from './DataLoader.css'
 
-console.log({ css });
+import css from './DataLoader.css'
 
 export default class DataLoader extends Component {
 
@@ -59,7 +58,7 @@ export default class DataLoader extends Component {
             data.map(row => ({
               date: row.date,
               site_station: `${row.site_id}-${ format("02")(row.station_id) }`,
-              rainfall_mm: row.rainfall_mm
+              rainfall_mm: +row.rainfall_mm
             }))
           );
 
@@ -114,8 +113,7 @@ export default class DataLoader extends Component {
           flexDirection: "column",
           flexWrap: "nowrap",
           justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "#f9fbfc"
+          alignItems: "center"
         }}
       >
         <div className={ css.DottedBox } >

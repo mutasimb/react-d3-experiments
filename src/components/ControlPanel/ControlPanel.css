@@ -1,0 +1,14 @@
+.ControlPanel {
+  padding: 7.5px 0;
+  background-color: red;
+}
+
+.ControlPanel .SelectDate {
+  margin: 15px auto;
+  max-width: 480px;
+}
+
+.ControlPanel .SelectSiteStation {
+  margin: 15px auto;
+  max-width: 480px;
+}

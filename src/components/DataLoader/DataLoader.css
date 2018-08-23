@@ -1,3 +1,7 @@
+.DropZone {
+  background-color: #f9fbfc;
+}
+
 .DropZone .DottedBox {
   display: flex;
   flex-flow: column nowrap;
