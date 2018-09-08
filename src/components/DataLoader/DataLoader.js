@@ -73,7 +73,7 @@ export default class DataLoader extends Component {
 
     if(files.length > 1) {
       this.setErrorMessage("Please do not load multiple files!");
-    } else if(files[0].name.indexOf(".csv") === -1 || files[0].type !== "text/csv") {
+    } else if(files[0].name.indexOf(".csv") === -1 || (files[0].type !== "text/csv" && files[0].type !== "application/vnd.ms-excel")) {
       this.setErrorMessage("Please load a valid .csv file");
     } else {
 
