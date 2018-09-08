@@ -1,3 +1,27 @@
 .D3Plot {
-  background-color: white;
+  .PlotHeader {
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    .PlotTitle {
+      margin: 0;
+    }
+    .NavBtns {
+      p {
+        display: inline;
+      }
+      button {
+        margin-left: 10px;
+        background: none;
+        border: 1px solid hsl(0, 0%, 80%);
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+      }
+    }
+  }
 }

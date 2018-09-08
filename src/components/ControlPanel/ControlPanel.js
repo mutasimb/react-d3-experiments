@@ -3,7 +3,7 @@ import Select from 'react-select'
 
 import css from './ControlPanel.css'
 
-export default props => {
+const ControlPanel = props => {
   const onChangeTime = selectedItems => {
     if(selectedItems.length > 1) {
       props.onTimeSelection(selectedItems.map(el => +el.value).sort((a, b) => a - b));
@@ -31,6 +31,7 @@ export default props => {
         options={ props.optionsTime }
         closeMenuOnSelect={ false }
         isMulti
+        placeholder="Filter by Month"
         onChange={ onChangeTime }
       />
       <Select
@@ -38,8 +39,11 @@ export default props => {
         options={ props.optionsSiteStation }
         closeMenuOnSelect={ false }
         isMulti
+        placeholder="Filter by Site-Station"
         onChange={ onChangeSiteStation }
       />
     </div>
   )
 }
+
+export default ControlPanel;

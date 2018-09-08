@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { timeParse, timeFormat } from 'd3-time-format';
 
-import logo from './logo.svg';
-
 import DataLoader from './components/DataLoader/DataLoader'
 import ControlPanel from './components/ControlPanel/ControlPanel'
+import D3Plot from './components/D3Plot/D3Plot'
 import css from './App.css';
+
 // import sampleData from './data/data.json'
 
 const dataToDefaultState = data => {
   let filteredData = data;
+
   let optionsTime = data.map(
     row => timeFormat("%Y%m")(timeParse("%m/%d/%Y")(row.date))
   ).filter(
@@ -25,6 +26,7 @@ const dataToDefaultState = data => {
   ).sort(
     (a, b) => a.label > b.label ? 1 : -1
   );
+
   let selectedTime = optionsTime.map(el => +el.value);
   let selectedSiteStation = optionsSiteStation.map(el => el.value);
 
@@ -87,22 +89,16 @@ class App extends Component {
 
     return (
       <div className={ css.App }>
-        <header className={ css.AppHeader }>
-          <img src={logo} className={ css.AppLogo } alt="logo" />
-          <h1 className={ css.AppTitle }>Welcome to React</h1>
-        </header>
-        <p className={ css.AppIntro }>{ JSON.stringify(data[0], null, 2) }; Length: { data.length }</p>
-        <p className={ css.AppIntro }>{ JSON.stringify(filteredData[0], null, 2) }; Length: { filteredData.length }</p>
-        <p className={ css.AppIntro }>{ JSON.stringify(selectedTime, null, 2) }</p>
-        <p className={ css.AppIntro }>{ JSON.stringify(selectedSiteStation, null, 2) }</p>
-        {/* { data.length !== 0 ? <D3Plot
-          data={ filteredData }
-        /> : null } */}
         { data.length !== 0 ? <ControlPanel
           optionsTime={ optionsTime }
           optionsSiteStation={ optionsSiteStation }
           onTimeSelection={ this.timeHandler }
           onSiteStationSelection={ this.siteStationHandler }
+        /> : null }
+        { data.length !== 0 ? <D3Plot
+          filteredData={ filteredData }
+          selectedTime={ selectedTime }
+          selectedSiteStation={ selectedSiteStation }
         /> : null }
         { data.length === 0 ? <DataLoader
           onDataLoading={ this.dataHandler }

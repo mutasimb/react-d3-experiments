@@ -1,0 +1,17 @@
+.SvgElement {
+  border: 1px solid hsl(0, 0%, 85%);
+  border-radius: 4px;
+  .g-axis-y {
+    path[class^="domain"], path[class*=" domain"] {
+      display: none;
+    }
+    line {
+      stroke: hsl(0, 0%, 85%);
+    }
+  }
+  .g-axis-x {
+    line {
+      stroke: hsl(0, 0%, 85%);
+    }
+  }
+}
